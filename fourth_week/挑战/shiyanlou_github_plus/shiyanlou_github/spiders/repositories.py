@@ -4,7 +4,7 @@ from shiyanlou_github.items import RepositoriesItem
 
 class RepositoriesSpider(scrapy.Spider):
     name = 'repositories'
-    strart_urls = [
+    start_urls = [
             'https://github.com/shiyanlou?tab=repositories']
 
     def parse(self, response):
@@ -36,7 +36,7 @@ class RepositoriesSpider(scrapy.Spider):
         item['commits'] = response.xpath(
                 '//span[@class="d-none d-sm-inline"]/strong/text()'
                 ).extract_first().strip()
-        item['branches'] = response.xpath(
+        item['branch'] = response.xpath(
                 '//a[contains(@class,"link-gray-dark no-underline")]/strong/text()'
                 ).extract_first().strip()
         item['tags'] = response.xpath(

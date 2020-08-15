@@ -21,7 +21,7 @@ class ShiyanlouGithubPipeline:
     def _process_repositories_item(self, item):
         item['update_time'] = datetime.strptime(item['update_time'],
                 '%Y-%m-%dT%H:%M:%SZ')
-        item['commits'] = int(item['commites'])
+        item['commits'] = int(item['commits'].replace(',',''))
         item['branch'] = int(item['branch'])
         item['tags'] = int(item['tags'])
         self.session.add(Repositories(**item))

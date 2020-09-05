@@ -7,7 +7,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = \
-'mysql+mysqldb://root@localhost:3306/simpledu?charset=utf8'
+'mysql+mysqldb://root:123@147.104.245.220:3306/simpledu'
 
 class ProductionConfig(BaseConfig):
     """ Production environment config """
